@@ -1,4 +1,4 @@
-:root{
+/* :root{
   --bg: #0b1220;
   --panel: #0f1724;
   --accent: #4ade80;
@@ -16,7 +16,7 @@ html,body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
-
+*/
 .container{
   max-width:920px;
   margin:28px auto;
@@ -29,20 +29,20 @@ h1{
   letter-spacing:0.5px;
 }
 
-.game-area{
+.gamearea{
   display:flex;
   gap:20px;
   align-items:flex-start;
 }
 
 canvas{
-  background: linear-gradient(180deg,#07122a 0%, #02203a 100%);
+  background: linear-gradient(180deg,#727b90 0%, #02203a 100%);
   border-radius:8px;
-  box-shadow: 0 8px 24px rgba(2,20,40,0.6);
+  box-shadow: 0 8px 24px rgba(94, 115, 139, 0.6);
   image-rendering: pixelated;
   touch-action: none;
 }
-
+/*
 .hud{
   min-width:200px;
   background:rgba(255,255,255,0.02);
@@ -100,10 +100,9 @@ canvas{
   font-size:18px;
 }
 
-/* layout for small screens */
 @media (max-width:720px){
   .game-area{flex-direction:column; align-items:center}
   .hud{width:100%}
   .mobile-controls{display:flex; flex-direction:column}
   canvas{width:92vw; height:92vw; max-width:480px; max-height:480px}
-}
+} */
