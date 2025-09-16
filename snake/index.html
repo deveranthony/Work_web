@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Snake</h1>
+
+    <div class="game-area">
+      <canvas id="gameCanvas" width="400" height="400" aria-label="Snake game"></canvas>
+
+      <aside class="hud">
+        <div class="scoreboard">
+          <div>Score: <span id="score">0</span></div>
+          <div>High: <span id="highScore">0</span></div>
+        </div>
+
+        <div class="controls">
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn">Pause</button>
+          <button id="restartBtn">Restart</button>
+        </div>
+
+        <div class="hint">
+          Controls: Arrow keys or WASD
+        </div>
+
+        <div class="mobile-controls" id="mobileControls" aria-hidden="true">
+          <button data-dir="up">↑</button>
+          <div class="h-row">
+            <button data-dir="left">←</button>
+            <button data-dir="down">↓</button>
+            <button data-dir="right">→</button>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>
+      <small>Made with HTML/CSS/JS — uses localStorage for high score</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

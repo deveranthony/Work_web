@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Onora</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header" aria-label="Site header">
+    <div class="container header-inner">
+      <a href="introduction.html" class="logo" aria-label="Site logo">
+        <img src="assets/logo.png" alt="" width="40" height="40">
+        <span class="logo-text">Onora</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="introduction.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="hero" aria-label="About me">
+        <div class="hero-text">
+      <h1 class="nowrap">About Me</h1>
+      <p class="lead">
+      <p class="lead_about">   <b>Embedded platforms:</b>  ESP32, STM32, microcontroller peripherals, HAL/driver development</p>
+      <p class="lead_about">   <b>Hardware acceleration & compute:</b> FPGA design, CUDA for parallel workloads</p>
+      <p class="lead_about">   <b>Systems programming:</b> Rust for memory safety in constrained environments; C/C++</p>
+      <p class="lead_about">   <b>Real-time & safety-critical design:</b> Deterministic scheduling, fault tolerance, watchdogs, deterministic latency</p>
+      <p class="lead_about">   <b>Edge computing & sensors:</b> Sensor fusion, low-latency edge processing, secure sensor-to-controller communication</p>
+      <p class="lead_about">   <b>Tooling & processes:</b> CI/CD for embedded builds, unit/integration testing, version control, bootloaders, debugging with JTAG/SWD</p>
+      <p class="lead_about">   <b>Interdisciplinary collaboration:</b> Hardware-software co-design, cross-functional teamwork, documentation</p>
+        </p></div>
+      <div class="hero-media"><img src="images/avatar.jpg" alt="Your portrait" width="400" height="250" /></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year2"></span> Onora.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

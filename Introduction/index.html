@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> This is index</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+
+        </header>
+        <div class="container">
+            <p class="badge">
+                Badge
+            </p>
+            <p class="badge1">
+                Badge
+            </p>
+            <div>
+                <h1>
+                    Creating Landing Page for<br>
+                    Business Website
+                </h1>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <div style="display: flex; flex-direction: column; background-color: blueviolet;padding: 5px; border-radius: 10px; border: 3px solid;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <p id="cal" style=" background-color: white; display: flex; width: 150px; justify-content: right;border-radius: 5%;">Inputs values</p>
+                            <input type="button" class="butt" value="Clear" onclick=funcclean()>
+                        </div>
+                        <div>
+                            <div>
+                                <input type="button" class="butt" value="7" id="num7" onclick=func7()>
+                                <input type="button" class="butt" value="8" id="num8" onclick=func8()>
+                                <input type="button" class="butt" value="9" id="num9" onclick=func9()>
+                                <input type="button" class="butt" value="+" id="plus" onclick=funcplus()>
+                            </div>
+                            <div>
+                                <input type="button" class="butt" value="4" id="num4" onclick=func4()>
+                                <input type="button" class="butt" value="5" id="num5" onclick=func5()>
+                                <input type="button" class="butt" value="6" id="num6" onclick=func6()>
+                                <input type="button" class="butt" value="-" id="minus" onclick=funcminus()>
+                            </div>
+                            <div>
+                                <input type="button" class="butt" value="1" id="num1" onclick=func1()>
+                                <input type="button" class="butt" value="2" id="num2" onclick=func2()>
+                                <input type="button" class="butt" value="3" id="num3" onclick=func3()>
+                                <input type="button" class="butt" value="X" id="times" onclick=functimes()>
+                            </div>
+                            <div>
+                                <input type="button" class="butt" value="0" id="num0" onclick=func0()>
+                                <input type="button" class="butt" value="." id="point" onclick=funcpoint()>
+                                <input type="button" class="butt" value="/" id="devide" onclick=funcdevide()>
+                                <input type="button" class="butt" value="=" id="equal" onclick=funcequal()>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <p class="sum" id="sum">
+                        A + B := 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let equ = 0;
+        let val = 0;
+        let result = 0;
+        let sym = 0;
+        function func() {
+            document.getElementById("cal").innerText = val;
+        }
+        function func0() {
+            val *= 10;
+            func();
+        }
+        function func1() {
+            val = val * 10 + 1;
+            func();
+        }
+        function func2() {
+            val = val * 10 + 2;
+            func()
+        }
+        function func3() {
+            val = val * 10 + 3;
+            func();
+        }
+        function func4() {
+            val = val * 10 + 4;
+            func();
+        }
+        function func5() {
+            val = val * 10 + 5;
+            func();
+        }
+        function func6() {
+            val = val * 10 + 6;
+            func();
+        }
+        function func7() {
+            val = val * 10 + 7;
+            func();
+        }
+        function func8() {
+            val = val * 10 + 8;
+            func();
+        }
+        function func9() {
+            val = val * 10 + 9;
+            func();
+        }
+        function funcplus() {
+            if(sym != 0 ) {
+                result += val;
+                val = 0;
+                document.getElementById("cal").innerText = result;
+                return;
+            }
+            if(val != 0 ) result = val;
+            document.getElementById("sum").innerText = result;
+            val = 0;
+            sym = 1;
+            func();
+        }
+        function funcminus() {
+            if(sym != 0 ) {
+                result -= val;
+                val = 0;
+                document.getElementById("cal").innerText = result;
+                return;
+            }
+            if(val != 0 ) result = val;
+            document.getElementById("sum").innerText = result;
+            val = 0;
+            sym = 2;
+            func();
+        }
+        function functimes() {
+            if(sym != 0 ) {
+                result *= val;
+                val = 0;
+                document.getElementById("cal").innerText = result;
+                return;
+            }
+            if(val != 0 ) result = val;
+            document.getElementById("sum").innerText = result;
+            val = 0;
+            sym = 3;
+            func();
+        }
+        function funcdevide() {
+            if(sym != 0 ) {
+                result /= val;
+                val = 0;
+                document.getElementById("cal").innerText = result;
+                return;
+            }
+            if(val != 0 ) result = val;
+            document.getElementById("sum").innerText = result;
+            val = 0;
+            sym = 4;
+            func();
+        }
+        function funcequal() {
+            var sum;
+            if(sym == 1) {
+                sum = result + val;
+            }
+            if(sym == 2) {
+                sum = result - val;
+            }
+            if(sym == 3) {
+                sum = result * val;
+            }
+            if(sym == 4) {
+                sum = result / val;
+            }
+            document.getElementById("cal").innerText = sum;
+            document.getElementById("sum").innerText = result;
+            result = sum;
+            val = 0;
+            sym = 0;
+        }
+        function funcclean(){
+            result = 0;
+            val = 0;
+            sym = 0;
+            func();
+        }
+    </script>
+</html>

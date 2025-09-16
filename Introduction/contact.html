@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container" role="main">
+    <h1>Contact</h1>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required />
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+    <div id="form-status" aria-live="polite" class="status" hidden></div>
+  </main>
+
+  <script>
+    // Optional: lightweight form submission feedback
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', function (e) {
+      status.hidden = false;
+      status.textContent = 'Sending...';
+    });
+
+    // You can add additional fetch-based submission if you prefer, but Formspree handles it server-side.
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+:root{
+    --bg: #0b1220;
+    --panel: #0f1724;
+    --accent: #4ade80;
+    --muted: #94a3b8;
+    --danger: #fb7185;
+  }
+  
+  *{box-sizing:border-box}
+  html,body{
+    height:100%;
+    margin:0;
+    font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    background:linear-gradient(180deg,#071025 0%, #071933 100%);
+    color:#e6eef8;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  
+  .container{
+    max-width:920px;
+    margin:28px auto;
+    padding:20px;
+  }
+  
+  h1{
+    margin:0 0 16px 0;
+    font-weight:600;
+    letter-spacing:0.5px;
+  }
+  
+  .game-area{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+  }
+  
+  canvas{
+    background: linear-gradient(180deg,#07122a 0%, #02203a 100%);
+    border-radius:8px;
+    box-shadow: 0 8px 24px rgba(2,20,40,0.6);
+    image-rendering: pixelated;
+    touch-action: none;
+  }
+  
+  .hud{
+    min-width:200px;
+    background:rgba(255,255,255,0.02);
+    padding:12px;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:stretch;
+  }
+  
+  .scoreboard {
+    display:flex;
+    justify-content:space-between;
+    font-size:18px;
+    color:var(--accent);
+    font-weight:600;
+  }
+  
+  .controls{
+    display:flex;
+    gap:8px;
+  }
+  
+  .controls button{
+    flex:1;
+    padding:8px 10px;
+    border-radius:6px;
+    border:1px solid rgba(255,255,255,0.06);
+    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    color:inherit;
+    cursor:pointer;
+  }
+  
+  .controls button:active{transform:translateY(1px)}
+  
+  .hint{
+    color:var(--muted);
+    font-size:13px;
+  }
+  
+  .mobile-controls{
+    display:none;
+    gap:8px;
+    justify-content:center;
+  }
+  
+  .mobile-controls button{
+    width:44px;
+    height:44px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.04);
+    background:rgba(255,255,255,0.02);
+    color:inherit;
+    font-size:18px;
+  }
+  
+  /* layout for small screens */
+  @media (max-width:720px){
+    .game-area{flex-direction:column; align-items:center}
+    .hud{width:100%}
+    .mobile-controls{display:flex; flex-direction:column}
+    canvas{width:92vw; height:92vw; max-width:480px; max-height:480px}
+  }

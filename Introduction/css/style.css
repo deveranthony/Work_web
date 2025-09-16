@@ -1,0 +1,87 @@
+
+* { 
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: cyan;
+    margin: 0px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+}
+
+
+
+.container{
+    margin-left: 60px;
+    padding: 50px;
+    background: linear-gradient(to right, #6a11cb 0%, #9e4522 100%);
+    border-left: 50px solid;
+    border-color: aquamarine;
+    height: 100%;
+}
+
+.sum{
+    display: flex;
+    background-color: antiquewhite;
+    height: 100px;
+    width: 150px;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.sum.col-red{
+    color: red;
+}
+.sum.col-black{
+    color: black;
+}
+
+.badge{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    width: 100px;
+    height: 50px;
+    font-size: large;
+    color: cadetblue;
+}
+.badge1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 100px;
+    right: 0px;
+    width: 100px;
+    height: 50px;
+    font-size: large;
+    color: cadetblue;
+}
+
+div{
+    padding: 10px;
+}
+
+input{
+    width: 200px;
+    height: 40px;
+}
+.butt{
+    width: 50px;
+    height: 30px;
+    border: 3px solid #6a11cb;
+    border-radius: 30%;
+}

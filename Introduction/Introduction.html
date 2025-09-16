@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Hi, I'm Onora — Embedded Engineer</title>
+  <!-- Example: Inter font from Google Fonts -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header" aria-label="Site header">
+    <div class="container header-inner">
+      <a href="introduction.html" class="logo" aria-label="Site logo">
+        <img src="assets/logo.png" alt="Logo" width="40" height="40">
+        <span class="logo-text">Onora</span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="introduction.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="index.html" class="nav-link">Index</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="hero" aria-label="Hero section">
+      <div class="hero-text">
+        <h1>Hello, I’m <span class="nowrap">Onora</span></h1>
+        <p class="lead">
+          I’m <b>Onora</b>, an embedded software engineer specializing in low-level firmware, real-time systems, and hardware-software co-design.</p>
+          <p class="lead">Over 8 years, I’ve built and optimized on ESP32, STM32, and FPGA platforms, and I’ve applied CUDA for parallel workloads and Rust for memory safety in constrained environments.</p> 
+          <p class="lead">A standout achievement is the smart swimming pool safety system, where I architected edge processing, sensor fusion, and fault-tolerant communications to meet stringent latency and reliability targets.
+        </p> 
+        <div class="cta">
+          <a href="about.html" class="btn btn-primary">Learn more</a>
+          <a href="contact.html" class="btn btn-secondary">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-media" aria-label="Intro image">
+        <img src="images/hero.jpg" alt="Abstract hero image" />
+      </div>
+    </section>
+
+    <section class="features" aria-label="Skills and focus">
+      <h2>What I do</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Low-Level Firmware</h3>
+          <p>ESP32, STM32, and FPGA platforms to build Embedded System.</p>
+        </article>
+        <article class="card">
+          <h3>CUDA/RUST</h3>
+          <p>Design Parallel workloads and Memory safety.</p>
+        </article>
+        <article class="card">
+          <h3>Performance</h3>
+          <p>My signature project—a smart swimming pool safety system—proved that hardware-software co-design.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Onora. All rights reserved.</p>
+      <pre class="small">
+        Contact Information
+          Phone Number: 91-2345-6780
+          Email Adress: Onora91235@gmail.com
+      </pre>
+    </div>
+  </footer>
+
+  <script>
+    // Simple dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
