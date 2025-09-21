@@ -1,12 +1,14 @@
 import { generateAuthLink } from "@/controllers/auth";
-import { Router } from "express";
+import { RequestHandler, Router } from "express";
+import { z, ZodRawShape } from "zod";
+import { validate,emailVaildationSchema } from "@/middlewares/validator";
 
 const authRouter = Router();
 
-authRouter.post("/generate-link", generateAuthLink);
-
-// authRouter.post("/login", (req, res) => {
-//   // Handle user login
-// });
+authRouter.post(
+  "/generate-link",
+  validate(emailVaildationSchema),
+  generateAuthLink
+);
 
 export default authRouter;
