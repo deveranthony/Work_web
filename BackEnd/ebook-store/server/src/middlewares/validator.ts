@@ -1,18 +1,31 @@
-import {z,ZodRawShape,treeifyError} from "zod";
+import {z,ZodRawShape} from "zod";
 import { RequestHandler } from "express";
 
 export const emailVaildationSchema = {
-  // email: z
-  // .string({
-  //     required_error: "Email is missing"
-  // })
-  // .email("Zod says it is invalid")
-  // Coerce undefined/null to empty string so we can provide a custom "missing" message
+  // email: z.preprocess(
+  //   (val) => val ?? "",
+  //   z.string().min(1, "Email is missing").email("Zod says it is invalid")
+  // // ),
+  // email: z.string()
+  //   .min(1, "Email is missing")
+  //   .refine((val) => z.email().safeParse(val).success, "Email format is invalid"),
   email: z.preprocess(
-    (val) => val ?? "",
-    z.string().min(1, "Email is missing").email("Zod says it is invalid")
+  (val) => val ?? "",
+  z.string()
+  .min(1, "Email is missing")
+  .refine((val) => z.email()
+    .safeParse(val)
+    .success, "Email format is invalid")
   ),
+  //email: z.string().min(1, "Email is missing").email("zod says it is invalid"),
 };
+
+// const schema = z.object({
+//   email: z.string({
+//     required_error: "Email is required",
+//     invalid_type_error: "Email must be a string",
+//   }).email("Email must be a valid email"),
+// })
 
 export const validate = <T extends ZodRawShape>(obj: T): RequestHandler => {
   return (req, res, next) => {
