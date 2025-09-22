@@ -1,5 +1,6 @@
 import express from 'express'
 import authRouter from './routes/auth'
+import "@/db/connect"
 
 const app = express()
 const port = process.env.PORT || 8989
