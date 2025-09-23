@@ -1,6 +1,8 @@
-import express from 'express'
+import 'express-async-error';
+import express,{ErrorRequestHandler} from 'express'
 import authRouter from './routes/auth'
 import "@/db/connect"
+import { errorHandler } from './middlewares/error'
 
 const app = express()
 const port = process.env.PORT || 8989
@@ -23,6 +25,8 @@ app.post("/test", (req, res) => {
   console.log(req.body);
   res.send("Test endpoint");
 });
+app.use(errorHandler );
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
 })

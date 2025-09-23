@@ -16,6 +16,8 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "express": "^5.1.0",
+    "express-async-error": "^0.0.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.1",
     "nodemailer": "^7.0.6",
     "zod": "^4.1.11"
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.5.2",
     "@types/nodemailer": "^7.0.1",
     "ts-node-dev": "^2.0.0",
