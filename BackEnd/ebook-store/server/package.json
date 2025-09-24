@@ -15,6 +15,7 @@
   "type": "commonjs",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cloudinary": "^2.7.0",
     "cookie-parser": "^1.4.7",
     "express": "^5.1.0",
     "express-async-error": "^0.0.2",

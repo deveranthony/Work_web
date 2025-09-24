@@ -1,6 +1,5 @@
 import { UserDoc } from "@/models/user";
-import { Response } from "express"
-import { email } from "zod";
+import { Request, Response } from "express"
 
 type ErrorResponseType = {
     
@@ -13,11 +12,11 @@ export const sendErrorResponse = ({res,message,status} :ErrorResponseType) => {
         res.status(status).json({message})
 }
 
-export const formatUserProfile = (user:UserDoc) => {
+export const formatUserProfile = (user:UserDoc) : Request["user"] => {
     return {
         id:user._id.toString(),
-        name: user.name,
-        email: user.email,
-        role: user.role,
-    }
-}
+        name: user.name ?? "",
+        email: user.email ?? "",
+        role: user.role ?? "user",
+    };
+};
