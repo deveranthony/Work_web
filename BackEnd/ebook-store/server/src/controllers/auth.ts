@@ -4,7 +4,8 @@ import VerificationTokenModel from "@/models/verificationToken";
 import UserModel from "@/models/user";
 import nodemailer from "nodemailer";
 import mail from "@/utils/mail";
-import { sendErrorResponse } from "@/utils/helper";
+import { formatUserProfile, sendErrorResponse } from "@/utils/helper";
+import jwt from 'jsonwebtoken';
 
 export const generateAuthLink: RequestHandler = async (req, res) => {
     const { email } = req.body;
@@ -68,5 +69,35 @@ return sendErrorResponse({
   await VerificationTokenModel.findByIdAndDelete(verificationToken._id)
 
   //TODO: authentication
-  res.json({})
+  const payload = {userId: user._id}
+  const authToken = jwt.sign(payload, process.env.JWT_SECRET!,{
+    expiresIn: '15d'
+  }) 
+
+  res.cookie('authToken', authToken, {
+    httpOnly:true,
+    secure: process.env.NODE_ENV !== 'development',
+    sameSite:'strict',
+    expires: new Date(Date.now()+15*24*60*60*1000)
+  })
+  res.json({ 
+    message: "Authentication successful!",
+    token: authToken 
+  })
+  // res.redirect(
+  //   `${process.env.AUTH_SUCCESS_URL}?profile=${JSON.stringify(
+  //     formatUserProfile(user)
+  //   )}`
+  // );
+  res.send();
+}
+
+export const sendProfileInfo: RequestHandler = (req,res) => {
+  res.json({
+    profile: req.user,
+  })
+}
+
+export const logout: RequestHandler = (req,res) => {
+  res.clearCookie('authToken').send();
 }
